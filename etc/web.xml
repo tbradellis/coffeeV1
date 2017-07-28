@@ -6,12 +6,46 @@
 <servlet>
   <servlet-name>Ch3 Coffee</servlet-name>
   <servlet-class>com.example.web.CoffeeSelect</servlet-class>
+  <init-param>
+    <param-name>adminEmail</param-name>
+    <param-value>bradellis10@gmail.com</param-value>
+    <param-name>mainEmail</param-name>
+    <param-value>bellis@newrelic.com</param-value>
+  </init-param>
 </servlet>
 
 <servlet-mapping>
   <servlet-name>Ch3 Coffee</servlet-name>
   <url-pattern>/SelectCoffee.do</url-pattern>
 </servlet-mapping>
+
+
+<servlet>
+  <servlet-name>CoffeeParamTest</servlet-name>
+  <servlet-class>TestInitParams</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>CoffeeParamTest</servlet-name>
+  <url-pattern>/Tester.do</url-pattern>
+</servlet-mapping>
+
+<context-param>
+  <param-name>adminEmail</param-name>
+  <param-value>bradellis10@gmail.com</param-value>
+  <param-name>mainEmail</param-name>
+  <param-value>bellis@newrelic.com</param-value>
+  <param-name>breed</param-name>
+  <param-value>Great Dane</param-value>
+</context-param>
+
+
+<listener>
+  <listener-class>
+    com.example.MyServletContextListener
+  </listener-class>
+</listener>
+
 
 
 </web-app>
