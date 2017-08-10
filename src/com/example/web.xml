@@ -1,0 +1,59 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+     version="2.5">
+
+<servlet>
+  <servlet-name>Ch3 Coffee</servlet-name>
+  <servlet-class>com.example.web.CoffeeSelect</servlet-class>
+  <init-param>
+    <param-name>adminEmail</param-name>
+    <param-value>bradellis10@gmail.com</param-value>
+    <param-name>mainEmail</param-name>
+    <param-value>bellis@newrelic.com</param-value>
+  </init-param>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>Ch3 Coffee</servlet-name>
+  <url-pattern>/SelectCoffee.do</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>CoffeeParamTest</servlet-name>
+  <servlet-class>TestInitParams</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>CoffeeParamTest</servlet-name>
+  <url-pattern>/Tester.do</url-pattern>
+</servlet-mapping>
+
+<context-param>
+  <param-name>adminEmail</param-name>
+  <param-value>bradellis10@gmail.com</param-value>
+  <param-name>mainEmail</param-name>
+  <param-value>bellis@newrelic.com</param-value>
+  <param-name>breed</param-name>
+  <param-value>Great Dane</param-value>
+</context-param>
+
+<servlet>
+  <servlet-name>ListenerTester</servlet-name>
+  <servlet-class>com.example.ListenerTester</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>ListenerTester</servlet-name>
+  <url-pattern>/ListenTest.do</url-pattern>
+</servlet-mapping>
+
+
+<listener>
+  <listener-class>com.example.MyServletContextListener</listener-class>
+</listener>
+
+
+
+</web-app>
